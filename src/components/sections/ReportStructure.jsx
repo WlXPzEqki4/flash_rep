@@ -1167,6 +1167,10 @@ const reportSections = [
   }
 ];
 
+
+
+
+
 const SubsectionDetail = ({ content, isLast, parentColor }) => (
   <div className="relative">
     <div className="absolute left-[-24px] top-0 bottom-0">
@@ -1293,13 +1297,10 @@ const ReportStructure = () => {
     }));
   };
 
+
   return (
-    // <div className="max-w-3xl mx-auto p-6 bg-white rounded-xl shadow-lg">
-    //<div className="max-w-3xl p-6 bg-white rounded-xl shadow-lg">
-    // <div className="max-w-3xl ml-0 mr-auto p-6 bg-white rounded-xl shadow-lg">
       <div className="h-full p-6 bg-white rounded-xl shadow-lg">
 
-      
       <div className="mb-6 flex justify-between items-center">
         <div>
           <h2 className="text-2xl font-bold text-gray-900">Analysis</h2>
@@ -1338,6 +1339,7 @@ const ReportStructure = () => {
 };
 
 export default ReportStructure;
+
 
 
 

@@ -1039,7 +1039,7 @@ export default function WorldMapChart() {
 
   return (
     <div className="bg-white rounded shadow p-4">
-      <h2 className="text-lg font-semibold mb-4">Google Trends: "Deepseek" Interest by Region</h2>
+      <h2 className="text-lg font-semibold mb-4">Google Trends: "Deepseek" Interest by Region (7 days to 30 Jan 2025)</h2>
 
       {/* A responsive container with aspect ratio */}
       <div style={{ position: 'relative', width: '100%', paddingBottom: '60%' }}>

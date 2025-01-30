@@ -547,17 +547,17 @@ function Layout() {
   const sections = [
     { id: 'section-1', component: SectionMinus1 },
     { id: 'section0', component: Section0 },
-    { id: 'section1', component: Section1 },
-    { id: 'section2', component: Section2 },
-    { id: 'section3', component: Section3 },
-    { id: 'section4', component: Section4 },
-    { id: 'section5', component: Section5 },
-    { id: 'section5-earnings', component: () => <Section5 subSection="earnings" /> },
-    { id: 'section5-refunds', component: () => <Section5 subSection="refunds" /> },
-    { id: 'section5-declines', component: () => <Section5 subSection="declines" /> },
-    { id: 'section5-payouts', component: () => <Section5 subSection="payouts" /> },
-    { id: 'section6', component: Section6 },
-    { id: 'section7', component: Section7 }
+    // { id: 'section1', component: Section1 },
+    // { id: 'section2', component: Section2 },
+    // { id: 'section3', component: Section3 },
+    // { id: 'section4', component: Section4 },
+    // { id: 'section5', component: Section5 },
+    // { id: 'section5-earnings', component: () => <Section5 subSection="earnings" /> },
+    // { id: 'section5-refunds', component: () => <Section5 subSection="refunds" /> },
+    // { id: 'section5-declines', component: () => <Section5 subSection="declines" /> },
+    // { id: 'section5-payouts', component: () => <Section5 subSection="payouts" /> },
+    // { id: 'section6', component: Section6 },
+    // { id: 'section7', component: Section7 }
   ];
 
   useEffect(() => {

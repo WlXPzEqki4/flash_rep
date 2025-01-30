@@ -7136,15 +7136,198 @@ function Section0() {
     '27/01/2025'
   ];
 
+
+  // const notesData = [
+  //   {
+  //     date: "20/01/2025",
+  //     articles: [
+  //       {
+  //         heading: "Announcement of DeepSeek-R1 Model",
+  //         content:
+  //           "DeepSeek, a Chinese AI start-up, announces the release of its advanced AI model, DeepSeek-R1. The announcement emphasises that the model rivals OpenAI's ChatGPT in performance while being developed at a significantly lower cost.",
+  //         source: "The Atlantic"
+  //       }
+  //     ]
+  //   },
+  //   {
+  //     date: "22/01/2025",
+  //     articles: [
+  //       {
+  //         heading: "Open Code and Technical Documentation Released",
+  //         content:
+  //           "DeepSeek publishes the source code and detailed technical documentation for DeepSeek-R1, a move applauded globally for promoting transparency and collaboration in AI development.",
+  //         source: "The Atlantic"
+  //       }
+  //     ]
+  //   },
+  //   {
+  //     date: "24/01/2025",
+  //     articles: [
+  //       {
+  //         heading: "DeepSeek-R1 Hits No. 1 on Apple's App Store in the US",
+  //         content:
+  //           "DeepSeek-R1 overtakes ChatGPT to become the most downloaded free app on Apple's App Store in the United States. This milestone signals its growing popularity and competitive edge.",
+  //         source: "The Atlantic"
+  //       },
+  //       {
+  //         heading: "Market Reaction",
+  //         content:
+  //           "Shares of major US tech companies, including Nvidia, Microsoft, and Alphabet, see significant declines amid investor concerns over DeepSeek's disruptive potential in the AI industry. Nvidia, in particular, experiences an 18% drop in share value.",
+  //         source: "Business Insider"
+  //       }
+  //     ]
+  //   },
+  //   {
+  //     date: "25/01/2025",
+  //     articles: [
+  //       {
+  //         heading: "Silicon Valley Reactions",
+  //         content:
+  //           "Prominent AI developers and companies in Silicon Valley express surprise and admiration for DeepSeek’s capabilities. Analysts note the model’s high performance at a fraction of the cost, highlighting it as a game-changer in the global AI race.",
+  //         source: "The Wall Street Journal"
+  //       },
+  //       {
+  //         heading: "Discussions on the Global AI Race Intensify",
+  //         content:
+  //           "Experts and policymakers debate the implications of DeepSeek’s rise, particularly for US-led AI innovation. The event underscores the shifting dynamics in the global AI race, with China demonstrating significant advancements.",
+  //         source: "The Atlantic"
+  //       }
+  //     ]
+  //   },
+  //   {
+  //     date: "27/01/2025",
+  //     articles: [
+  //       {
+  //         heading: "Analysts Highlight Economic Impacts",
+  //         content:
+  //           "Economists predict that DeepSeek’s low-cost model could pressure US-based AI companies to innovate faster or reduce costs to remain competitive. Tech industry leaders urge governments to accelerate investments in AI.",
+  //         source: "Business Insider"
+  //       }
+  //     ]
+  //   },
+  // ];
+
+
+
+
+
+
+
+
+  // const notesData = [
+  //   {
+  //     date: "20/01/2025",
+  //     articles: [
+  //       {
+  //         heading: "Announcement of DeepSeek-R1 Model",
+  //         content:
+  //           "DeepSeek, a Chinese AI start-up, announces the release of its advanced AI model, DeepSeek-R1. The announcement emphasizes that the model rivals OpenAI's ChatGPT in performance while being developed at a significantly lower cost.",
+  //         source: "The Atlantic"
+  //       }
+  //     ]
+  //   },
+  //   {
+  //     date: "22/01/2025",
+  //     articles: [
+  //       {
+  //         heading: "Open Code and Technical Documentation Released",
+  //         content:
+  //           "DeepSeek publishes the source code and detailed technical documentation for DeepSeek-R1, a move applauded globally for promoting transparency and collaboration in AI development.",
+  //         source: "The Atlantic"
+  //       }
+  //     ]
+  //   },
+  //   {
+  //     date: "24/01/2025",
+  //     articles: [
+  //       {
+  //         heading: "DeepSeek-R1 Hits No. 1 on Apple's App Store in the US",
+  //         content:
+  //           "DeepSeek-R1 overtakes ChatGPT to become the most downloaded free app on Apple's App Store in the United States. This milestone signals its growing popularity and competitive edge.",
+  //         source: "The Atlantic"
+  //       },
+  //       {
+  //         heading: "Market Reaction",
+  //         content:
+  //           "Shares of major US tech companies, including Nvidia, Microsoft, and Alphabet, see significant declines amid investor concerns over DeepSeek's disruptive potential in the AI industry. Nvidia, in particular, experiences an 18% drop in share value.",
+  //         source: "Business Insider"
+  //       }
+  //     ]
+  //   },
+  //   {
+  //     date: "25/01/2025",
+  //     articles: [
+  //       {
+  //         heading: "Silicon Valley Reactions",
+  //         content:
+  //           "Prominent AI developers and companies in Silicon Valley express surprise and admiration for DeepSeek’s capabilities. Analysts note the model’s high performance at a fraction of the cost, highlighting it as a game-changer in the global AI race.",
+  //         source: "The Wall Street Journal"
+  //       },
+  //       {
+  //         heading: "Discussions on the Global AI Race Intensify",
+  //         content:
+  //           "Experts and policymakers debate the implications of DeepSeek’s rise, particularly for US-led AI innovation. The event underscores the shifting dynamics in the global AI race, with China demonstrating significant advancements.",
+  //         source: "The Atlantic"
+  //       }
+  //     ]
+  //   },
+  //   {
+  //     date: "27/01/2025",
+  //     articles: [
+  //       {
+  //         heading: "Analysts Highlight Economic Impacts",
+  //         content:
+  //           "Economists predict that DeepSeek’s low-cost model could pressure US-based AI companies to innovate faster or reduce costs to remain competitive. Tech industry leaders urge governments to accelerate investments in AI.",
+  //         source: "Business Insider"
+  //       }
+  //     ]
+  //   },
+  //   {
+  //     date: "28/01/2025",
+  //     articles: [
+  //       {
+  //         heading: "DeepSeek Blames Disruption on Cyberattack as Vulnerabilities Emerge",
+  //         content:
+  //           "DeepSeek reports that large-scale malicious attacks have caused service disruptions, preventing new user registrations. Concurrently, security researchers identify vulnerabilities in the R1 AI model, raising concerns about its robustness.",
+  //         source: "SecurityWeek"
+  //       }
+  //     ]
+  //   },
+  //   {
+  //     date: "29/01/2025",
+  //     articles: [
+  //       {
+  //         heading: "White House Evaluates National Security Risks of DeepSeek",
+  //         content:
+  //           "The White House announces an assessment of potential national security risks associated with DeepSeek's AI technology. Critics accuse the company of rule-breaking, espionage, and market manipulation.",
+  //         source: "Decrypt"
+  //       }
+  //     ]
+  //   },
+  //   {
+  //     date: "30/01/2025",
+  //     articles: [
+  //       {
+  //         heading: "U.S. Navy Bans Use of DeepSeek App Amid Security Concerns",
+  //         content:
+  //           "The U.S. Navy prohibits the use of the DeepSeek app among its personnel, citing potential security and ethical concerns related to data privacy and the app's Chinese origins.",
+  //         source: "Time"
+  //       }
+  //     ]
+  //   }
+  // ];
+  
+
+
   const notesData = [
     {
       date: "20/01/2025",
       articles: [
         {
-          heading: "Announcement of DeepSeek-R1 Model",
+          heading: "DeepSeek Unveils R1 AI Model",
           content:
-            "DeepSeek, a Chinese AI start-up, announces the release of its advanced AI model, DeepSeek-R1. The announcement emphasises that the model rivals OpenAI's ChatGPT in performance while being developed at a significantly lower cost.",
-          source: "The Atlantic"
+            "DeepSeek, a Hangzhou-based AI start-up, announces the release of its open-source AI model, DeepSeek-R1. Developed in just two months at a cost of $6 million, R1 outperforms industry leaders in various benchmarks, challenging existing AI development paradigms.",
+          source: "Financial Times"
         }
       ]
     },
@@ -7152,10 +7335,10 @@ function Section0() {
       date: "22/01/2025",
       articles: [
         {
-          heading: "Open Code and Technical Documentation Released",
+          heading: "DeepSeek-R1 Source Code Released",
           content:
-            "DeepSeek publishes the source code and detailed technical documentation for DeepSeek-R1, a move applauded globally for promoting transparency and collaboration in AI development.",
-          source: "The Atlantic"
+            "DeepSeek publishes the source code and technical documentation for R1 under an open-source MIT license, promoting transparency and enabling widespread use and commercialization.",
+          source: "Business Insider"
         }
       ]
     },
@@ -7163,16 +7346,16 @@ function Section0() {
       date: "24/01/2025",
       articles: [
         {
-          heading: "DeepSeek-R1 Hits No. 1 on Apple's App Store in the US",
+          heading: "DeepSeek-R1 Tops Apple's App Store",
           content:
-            "DeepSeek-R1 overtakes ChatGPT to become the most downloaded free app on Apple's App Store in the United States. This milestone signals its growing popularity and competitive edge.",
-          source: "The Atlantic"
+            "DeepSeek's R1 model becomes the most-downloaded app on Apple's App Store, surpassing ChatGPT. This milestone highlights its rapid adoption and the shifting dynamics in the AI industry.",
+          source: "New York Magazine"
         },
         {
-          heading: "Market Reaction",
+          heading: "Tech Stocks Plummet Amid DeepSeek's Rise",
           content:
-            "Shares of major US tech companies, including Nvidia, Microsoft, and Alphabet, see significant declines amid investor concerns over DeepSeek's disruptive potential in the AI industry. Nvidia, in particular, experiences an 18% drop in share value.",
-          source: "Business Insider"
+            "Following DeepSeek-R1's release, major tech stocks, including Nvidia, Microsoft, and Alphabet, experience significant declines. Nvidia's market value drops by nearly $600 billion in a single day, reflecting investor concerns over the disruptive potential of DeepSeek's advancements.",
+          source: "New York Magazine"
         }
       ]
     },
@@ -7180,16 +7363,16 @@ function Section0() {
       date: "25/01/2025",
       articles: [
         {
-          heading: "Silicon Valley Reactions",
+          heading: "U.S. Tech Industry Reacts to DeepSeek's Breakthrough",
           content:
-            "Prominent AI developers and companies in Silicon Valley express surprise and admiration for DeepSeek’s capabilities. Analysts note the model’s high performance at a fraction of the cost, highlighting it as a game-changer in the global AI race.",
-          source: "The Wall Street Journal"
+            "American tech companies and researchers express astonishment at DeepSeek's rapid progress in AI, acknowledging the model's capabilities and the efficiency of its development.",
+          source: "The Atlantic"
         },
         {
-          heading: "Discussions on the Global AI Race Intensify",
+          heading: "Debate Over Global AI Leadership Intensifies",
           content:
-            "Experts and policymakers debate the implications of DeepSeek’s rise, particularly for US-led AI innovation. The event underscores the shifting dynamics in the global AI race, with China demonstrating significant advancements.",
-          source: "The Atlantic"
+            "DeepSeek's achievements spark discussions about the shifting balance in global AI leadership, with analysts considering the implications for U.S. dominance in the field.",
+          source: "Barron's"
         }
       ]
     },
@@ -7197,14 +7380,81 @@ function Section0() {
       date: "27/01/2025",
       articles: [
         {
-          heading: "Analysts Highlight Economic Impacts",
+          heading: "Economic Analysts Assess DeepSeek's Impact",
           content:
-            "Economists predict that DeepSeek’s low-cost model could pressure US-based AI companies to innovate faster or reduce costs to remain competitive. Tech industry leaders urge governments to accelerate investments in AI.",
-          source: "Business Insider"
+            "Economists analyze the potential long-term effects of DeepSeek's cost-effective AI model on the tech industry, suggesting it may lead to a reevaluation of investment strategies and resource allocation.",
+          source: "Time"
         }
       ]
     },
+    {
+      date: "28/01/2025",
+      articles: [
+        {
+          heading: "DeepSeek R1 Now Available on Azure AI Foundry and GitHub",
+          content:
+            "DeepSeek R1 is now accessible in the model catalog on Azure AI Foundry and GitHub, enabling businesses to integrate advanced AI capabilities seamlessly.",
+          source: "Azure AI Blog"
+        }
+      ]
+    },
+    {
+      date: "29/01/2025",
+      articles: [
+        {
+          heading: "Alibaba Releases AI Model Surpassing DeepSeek",
+          content:
+            "Alibaba unveils a new AI model that it claims outperforms DeepSeek-R1, marking a significant advancement in the competitive AI landscape.",
+          source: "Reuters"
+        },
+        {
+          heading: "DeepSeek-R1 Distilled Models Deployed in Amazon Bedrock",
+          content:
+            "Distilled versions of DeepSeek-R1 are now deployable using Amazon Bedrock Custom Model Import, making advanced AI capabilities more accessible to organizations within AWS infrastructure.",
+          source: "AWS Machine Learning Blog"
+        }
+      ]
+    },
+    {
+      date: "30/01/2025",
+      articles: [
+        {
+          heading: "DeepSeek's Open-Source Model Sparks Global Collaboration",
+          content:
+            "The open-source release of DeepSeek-R1 leads to a surge in international collaboration, with developers worldwide contributing to its improvement and adaptation across various industries.",
+          source: "TechCrunch"
+        },
+        {
+          heading: "Concerns Raised Over Data Privacy in DeepSeek-R1 Deployments",
+          content:
+            "Privacy advocates express concerns regarding the data handling practices of applications built on DeepSeek-R1, urging for stricter data protection measures.",
+          source: "The Guardian"
+        },
+        {
+          heading: "DeepSeek Announces Upcoming R2 Model with Enhanced Security Features",
+          content:
+            "In response to recent security concerns, DeepSeek reveals plans for the R2 model, emphasizing improved security protocols and data privacy measures.",
+          source: "The Verge"
+        }
+      ]
+    }
   ];
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // Generate dummy data & set intervals
   useEffect(() => {
@@ -7530,11 +7780,15 @@ function Section0() {
 
   return (
     <div className="p-4 space-y-8">
-      {/* Header */}
-      <div className="bg-white rounded-lg shadow p-6">
-        <h1 className="text-2xl font-bold mb-4">Market Overview</h1>
-        <p className="text-gray-700">Real-time market performance tracker</p>
+      <div className="bg-blue-100 p-8 border-b border-gray-200 mb-6">
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">
+          DeepSeek-R1: Market Impact Overview
+        </h1>
+        <p className="text-gray-600 text-lg">
+        Real-time market performance tracker
+        </p>
       </div>
+
 
       {/* Single-stock charts in a row */}
       <div className="flex flex-col lg:flex-row gap-6">
@@ -7558,14 +7812,25 @@ function Section0() {
       </div>
 
 
+      {/* Header */}
+      {/* <div className="bg-white rounded-lg shadow p-6">
+        <h1 className="text-2xl font-bold mb-4"> DeepSeek-R1: China's Cost-Effective AI Challenge to Silicon Valley
+        </h1>
+        <p className="text-gray-700">Analysis of market impact and global reactions to DeepSeek's breakthrough in AI development</p>
+      </div>
+ */}
+
+      <div className="bg-blue-100 p-8 border-b border-gray-200 mb-6">
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+          DeepSeek-R1: The Rise and Ripple Effects of a Game-Changing AI
+        </h1>
+        <p className="text-gray-600 text-lg">
+        Tracking the surge, peak, and fallout of global attention on DeepSeek’s AI breakthrough—market reactions, industry shifts, and the evolving narrative over time.
+        </p>
+      </div>
 
 
 
-      {/*
-        2-column grid:
-        - left => the CSV-based “GoogleTrendsReconstructed” charts
-        - right => the note cards
-      */}
       <div className="grid grid-cols-12 gap-6 items-stretch">
         {/* Left: our CSV-based Trends */}
         <div className="col-span-12 xl:col-span-7 flex flex-col h-full">
@@ -7575,11 +7840,29 @@ function Section0() {
         {/* Right: Key Events box */}
         <div className="col-span-12 xl:col-span-5 flex flex-col h-full">
           <div className="bg-gray-200 rounded shadow p-4 space-y-4 flex-1">
-            <h1 className="text-xl font-bold mb-4">Key Events</h1>
+            <h1 className="text-xl font-bold mb-4">Key Events in Timeline</h1>
             {renderNoteCards()}
           </div>
         </div>
       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
     </div>
   );
 }

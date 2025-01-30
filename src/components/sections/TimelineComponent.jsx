@@ -237,6 +237,39 @@ function TimelineComponent() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
 
+  // const timelineEvents = [
+  //   {
+  //     date: "January 20, 2025",
+  //     title: "Announcement of DeepSeek-R1 Model",
+  //     description: "DeepSeek announces the release of its advanced AI model, rivaling ChatGPT in performance while developed at significantly lower cost."
+  //   },
+  //   {
+  //     date: "January 22, 2025",
+  //     title: "Open Code Release",
+  //     description: "DeepSeek publishes source code and technical documentation for DeepSeek-R1, promoting transparency in AI development."
+  //   },
+  //   {
+  //     date: "January 24, 2025",
+  //     title: "App Store Success & Market Impact",
+  //     description: "DeepSeek-R1 becomes #1 free app on US App Store. Major tech companies' shares decline, with Nvidia dropping 18%."
+  //   },
+  //   {
+  //     date: "January 25, 2025",
+  //     title: "Silicon Valley Response",
+  //     description: "AI developers express admiration for DeepSeek's capabilities. Discussions intensify about global AI race implications."
+  //   },
+  //   {
+  //     date: "January 27, 2025",
+  //     title: "Economic Analysis",
+  //     description: "Economists predict pressure on US AI companies to innovate or reduce costs. Calls increase for accelerated AI investment."
+  //   },
+  //   {
+  //     date: "January 28, 2025",
+  //     title: "Ongoing Impacts",
+  //     description: "DeepSeek's success sparks discussions about international AI collaboration and technology regulation."
+  //   }
+  // ];
+
   const timelineEvents = [
     {
       date: "January 20, 2025",
@@ -267,8 +300,26 @@ function TimelineComponent() {
       date: "January 28, 2025",
       title: "Ongoing Impacts",
       description: "DeepSeek's success sparks discussions about international AI collaboration and technology regulation."
+    },
+    {
+      date: "January 29, 2025",
+      title: "National Security Review",
+      description: "The White House announces a formal review of DeepSeek-R1's potential national security risks, citing concerns over AI governance and foreign influence."
+    },
+    {
+      date: "January 30, 2025",
+      title: "Backlash & Policy Response",
+      description: "Privacy advocates and policymakers raise concerns over DeepSeek’s data handling and censorship risks, prompting discussions on AI regulations and security measures."
     }
   ];
+
+
+
+
+
+
+
+
 
   const advanceTimeline = useCallback(() => {
     if (currentIndex < timelineEvents.length - 1) {
@@ -295,7 +346,8 @@ function TimelineComponent() {
       {/* <h2 className="text-2xl font-bold mb-8">Development Timeline</h2> */}
 
       {/* <div className="relative h-1 bg-gray-200 rounded-full mb-12"> */}
-      <div className="relative h-1 bg-gray-200 rounded-full mb-12">
+      <div className="relative h-1 bg-gray-200 rounded-full mb-6">
+
 
         <div 
           className="absolute h-full bg-blue-500 rounded-full transition-all duration-500 ease-in-out"
@@ -307,7 +359,7 @@ function TimelineComponent() {
         {visibleEvents.map((event, index) => (
           <div
             key={index}
-            className="bg-white rounded-lg shadow-sm p-6 opacity-0 animate-slideIn"
+            className="bg-white rounded-lg shadow-sm p-4 opacity-0 animate-slideIn"
             style={{
               animationDelay: `${index * 100}ms`,
               animationFillMode: 'forwards'

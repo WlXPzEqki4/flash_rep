@@ -787,49 +787,418 @@
 
 
 
-import React, { useState } from 'react';
-// import { Building2, Globe, Cpu, Calendar, Users, Briefcase, Award, Activity } from 'lucide-react';
-import { Building2, Globe, Cpu, Calendar, Users, Briefcase, Award, Activity, Rocket, Code } from 'lucide-react';
 
 
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import { Building2, Globe, Cpu, Calendar, Users, Briefcase, Award, Activity, Rocket, Code } from 'lucide-react';
 
 // const tooltipData = {
-//   "DeepSeek": {
-//     id: "deepseek",
-//     type: "COMPANY",
-//     icon: Building2,
-//     color: "text-indigo-500",
-//     bgColor: "bg-indigo-50",
-//     metadata: {
-//       Founded: "2023",
-//       Headquarters: "Beijing, China",
-//       Industry: "Artificial Intelligence",
-//       Specialization: "Large Language Models",
-//       Notable_Product: "DeepSeek-R1",
-//       Development_Approach: "Open Source",
-//       Market_Position: "Emerging Leader"
+//     "DeepSeek": {
+//       id: "deepseek",
+//       type: "COMPANY",
+//       icon: Building2,
+//       color: "text-indigo-500",
+//       bgColor: "bg-indigo-50",
+//       metadata: {
+//         Founded: "2023",
+//         Headquarters: "Beijing, China",
+//         Industry: "Artificial Intelligence",
+//         Specialization: "Large Language Models",
+//         Notable_Product: "DeepSeek-R1",
+//         Development_Approach: "Open Source",
+//         Market_Position: "Emerging Leader"
+//       },
+//       description: "A Chinese artificial intelligence company founded in 2023, focused on developing large language models and AI applications. The company is known for its cost-effective approach to AI development and open-source philosophy."
 //     },
-//     description: "A Chinese artificial intelligence company founded in 2023, focused on developing large language models and AI applications. The company is known for its cost-effective approach to AI development and open-source philosophy."
-//   },
-//   "Chinese artificial intelligence": {
-//     id: "chinese-ai",
-//     type: "INDUSTRY",
-//     icon: Globe,
-//     color: "text-emerald-500",
-//     bgColor: "bg-emerald-50",
-//     metadata: {
-//       Market_Size: "$50B+ (2024)",
-//       Growth_Rate: "35% YoY",
-//       Key_Players: "DeepSeek, Baidu, SenseTime",
-//       Government_Support: "High",
-//       Global_Rank: "2nd after US",
-//       Key_Focus_Areas: "LLMs, Computer Vision",
-//       Competitive_Edge: "Cost-Effective Development"
+//     "Chinese artificial intelligence": {
+//       id: "chinese-ai",
+//       type: "INDUSTRY",
+//       icon: Globe,
+//       color: "text-emerald-500",
+//       bgColor: "bg-emerald-50",
+//       metadata: {
+//         Market_Size: "$50B+ (2024)",
+//         Growth_Rate: "35% YoY",
+//         Key_Players: "DeepSeek, Baidu, SenseTime",
+//         Government_Support: "High",
+//         Global_Rank: "2nd after US",
+//         Key_Focus_Areas: "LLMs, Computer Vision",
+//         Competitive_Edge: "Cost-Effective Development"
+//       },
+//       description: "The rapidly growing AI industry in China, characterized by significant government support, large-scale data availability, and innovative approaches to AI development that often emphasize cost-effectiveness and practical applications."
 //     },
-//     description: "The rapidly growing AI industry in China, characterized by significant government support, large-scale data availability, and innovative approaches to AI development that often emphasize cost-effectiveness and practical applications."
-//   }
-// };
+//     "significant breakthrough": {
+//       id: "breakthrough",
+//       type: "EVENT",
+//       icon: Rocket,
+//       color: "text-amber-500",
+//       bgColor: "bg-amber-50",
+//       metadata: {
+//         Event_Date: "January 2025",
+//         Impact_Level: "Industry-Wide",
+//         Market_Response: "Major Tech Stock Decline",
+//         Key_Achievement: "Top App Store Position",
+//         Cost_Efficiency: "90% Lower Than Competitors",
+//         User_Adoption: "Rapid Global Growth",
+//         Technical_Validation: "Peer Reviewed"
+//       },
+//       description: "A pivotal moment in AI development where DeepSeek demonstrated the ability to create a ChatGPT-competitive model at a fraction of the cost, challenging the established notion that state-of-the-art AI requires massive resources and establishing a new paradigm for efficient AI development."
+//     },
+//     "DeepSeek-R1": {
+//       id: "deepseek-r1",
+//       type: "PRODUCT",
+//       icon: Cpu,
+//       color: "text-purple-500",
+//       bgColor: "bg-purple-50",
+//       metadata: {
+//         Release_Date: "January 2025",
+//         Architecture: "Large Language Model",
+//         Training_Approach: "Cost-Optimized",
+//         Code_Availability: "Open Source",
+//         Performance_Level: "ChatGPT Competitive",
+//         Key_Features: "Efficiency, Accessibility",
+//         Market_Status: "#1 Free iOS App (US)"
+//       },
+//       description: "DeepSeek's flagship AI model that achieves competitive performance with leading Western AI systems while requiring significantly fewer resources to develop and deploy. The model represents a major advancement in efficient AI development and has been made open source for global research and modification."
+//     }
+//   };
+  
+// function NarrativeComponent() {
+//   const [activeTooltip, setActiveTooltip] = useState(null);
+//   const [firstOccurrences] = useState(() => {
+//     // Initialize with all terms mapped to false (not found yet)
+//     return Object.keys(tooltipData).reduce((acc, term) => {
+//       acc[term] = false;
+//       return acc;
+//     }, {});
+//   });
 
+//   const renderTextWithTooltips = (text, isFirstParagraph) => {
+//     let result = text;
+//     const terms = Object.keys(tooltipData).sort((a, b) => b.length - a.length);
+    
+//     // Only process terms if this is the first paragraph
+//     if (isFirstParagraph) {
+//       terms.forEach(term => {
+//         if (result.includes(term)) {
+//           // Find the first occurrence and replace only that one
+//           const regex = new RegExp(`(${term})`, '');
+//           result = result.replace(regex, (match) => {
+//             return `&&&&<span 
+//               class="font-bold cursor-help hover:text-blue-600 transition-colors duration-200"
+//               data-tooltip="${tooltipData[match].id}"
+//             >${match}</span>&&&&`;
+//           });
+//         }
+//       });
+//     }
+    
+//     return result.split('&&&&').map((part, index) => {
+//       if (part.startsWith('<span')) {
+//         const tooltipId = part.match(/data-tooltip="([^"]+)"/)[1];
+//         const content = part.match(/>(.*?)<\/span>/)[1];
+        
+//         return (
+//           <span
+//             key={index}
+//             className="font-bold cursor-help hover:text-blue-600 transition-colors duration-200"
+//             onMouseEnter={() => setActiveTooltip(tooltipId)}
+//             onMouseLeave={() => setActiveTooltip(null)}
+//           >
+//             {content}
+//           </span>
+//         );
+//       }
+//       return part;
+//     });
+//   };
+
+//   const renderTooltipCard = (tooltipId) => {
+//     const term = Object.keys(tooltipData).find(key => tooltipData[key].id === tooltipId);
+//     if (!term) return null;
+    
+//     const data = tooltipData[term];
+//     const Icon = data.icon;
+
+//     return (
+//       <div className="bg-white rounded-lg shadow-lg border border-gray-100 w-[600px]">
+//         <div className={`flex items-center gap-3 p-4 ${data.bgColor} rounded-t-lg`}>
+//           <Icon size={24} className={`${data.color}`} />
+//           <div>
+//             <h3 className="text-lg font-medium">{term}</h3>
+//             <p className={`text-sm ${data.color} font-medium`}>{data.type}</p>
+//           </div>
+//         </div>
+
+//         <div className="p-4 text-sm text-gray-600 border-b border-gray-100">
+//           {data.description}
+//         </div>
+
+//         <div className="p-4 grid grid-cols-2 gap-x-8 gap-y-4">
+//           {Object.entries(data.metadata).map(([key, value]) => (
+//             <div key={key} className="flex flex-col">
+//               <span className="text-xs text-gray-500">
+//                 {key.split('_').join(' ')}
+//               </span>
+//               <span className="text-sm font-medium text-gray-900">{value}</span>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     );
+//   };
+
+
+// return (
+//   <div className="w-full relative min-h-[500px]">
+//     <div className="bg-white rounded-lg shadow-sm p-6"> 
+//       <div className="space-y-6 text-gray-700 mb-6">
+//         <p className="leading-relaxed">
+//           {renderTextWithTooltips(
+//             "In the past week, the Chinese artificial intelligence start-up DeepSeek has made a significant breakthrough with the release of its AI model, DeepSeek-R1. This model rivals leading Western AI systems, such as OpenAI's ChatGPT, in capabilities but was developed at a fraction of the cost. Notably, DeepSeek-R1 has surpassed ChatGPT as the top free application on Apple's App Store in the United States.",
+//             true
+//           )}
+//         </p>
+
+//         <p className="leading-relaxed">
+//           {renderTextWithTooltips(
+//             "DeepSeek's approach contrasts with that of many American AI companies by maintaining a relatively open model. The company has made the program's final code and a detailed technical explanation publicly available, allowing researchers and developers worldwide to study and modify the model. This openness has been lauded by many in the tech community.",
+//             false
+//           )}
+//         </p>
+
+//         <p className="leading-relaxed">
+//           {renderTextWithTooltips(
+//             "The emergence of DeepSeek has had significant impacts on the technology sector. Shares of major tech companies, including Nvidia, Microsoft, and Alphabet, have experienced declines amid concerns over the competitive threat posed by DeepSeek's cost-effective AI model. The development has also intensified discussions about the global AI race and the need for continued innovation and investment in AI technologies.",
+//             false
+//           )}
+//         </p>
+//       </div>
+//     </div>
+
+//     {activeTooltip && (
+//       <div className="absolute top-full left-1/2 mt-10 transform -translate-x-1/2">
+//         {renderTooltipCard(activeTooltip)}
+//       </div>
+//     )}
+
+//   </div>
+// );
+// }
+
+// export default NarrativeComponent;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import { Building2, Globe, Cpu, Rocket, HelpCircle } from 'lucide-react';
+
+// const tooltipData = {
+//     "DeepSeek": {
+//       id: "deepseek",
+//       type: "COMPANY",
+//       icon: Building2,
+//       color: "text-indigo-500",
+//       bgColor: "bg-indigo-50",
+//       metadata: {
+//         Founded: "2023",
+//         Headquarters: "Beijing, China",
+//         Industry: "Artificial Intelligence",
+//         Specialization: "Large Language Models",
+//         Notable_Product: "DeepSeek-R1",
+//         Development_Approach: "Open Source",
+//         Market_Position: "Emerging Leader"
+//       },
+//       description: "A Chinese artificial intelligence company founded in 2023, focused on developing large language models and AI applications. The company is known for its cost-effective approach to AI development and open-source philosophy."
+//     },
+//     "Chinese artificial intelligence": {
+//       id: "chinese-ai",
+//       type: "INDUSTRY",
+//       icon: Globe,
+//       color: "text-emerald-500",
+//       bgColor: "bg-emerald-50",
+//       metadata: {
+//         Market_Size: "$50B+ (2024)",
+//         Growth_Rate: "35% YoY",
+//         Key_Players: "DeepSeek, Baidu, SenseTime",
+//         Government_Support: "High",
+//         Global_Rank: "2nd after US",
+//         Key_Focus_Areas: "LLMs, Computer Vision",
+//         Competitive_Edge: "Cost-Effective Development"
+//       },
+//       description: "The rapidly growing AI industry in China, characterized by significant government support, large-scale data availability, and innovative approaches to AI development that often emphasize cost-effectiveness and practical applications."
+//     },
+//     "significant breakthrough": {
+//       id: "breakthrough",
+//       type: "EVENT",
+//       icon: Rocket,
+//       color: "text-amber-500",
+//       bgColor: "bg-amber-50",
+//       metadata: {
+//         Event_Date: "January 2025",
+//         Impact_Level: "Industry-Wide",
+//         Market_Response: "Major Tech Stock Decline",
+//         Key_Achievement: "Top App Store Position",
+//         Cost_Efficiency: "90% Lower Than Competitors",
+//         User_Adoption: "Rapid Global Growth",
+//         Technical_Validation: "Peer Reviewed"
+//       },
+//       description: "A pivotal moment in AI development where DeepSeek demonstrated the ability to create a ChatGPT-competitive model at a fraction of the cost, challenging the established notion that state-of-the-art AI requires massive resources and establishing a new paradigm for efficient AI development."
+//     },
+//     "DeepSeek-R1": {
+//       id: "deepseek-r1",
+//       type: "PRODUCT",
+//       icon: Cpu,
+//       color: "text-purple-500",
+//       bgColor: "bg-purple-50",
+//       metadata: {
+//         Release_Date: "January 2025",
+//         Architecture: "Large Language Model",
+//         Training_Approach: "Cost-Optimized",
+//         Code_Availability: "Open Source",
+//         Performance_Level: "ChatGPT Competitive",
+//         Key_Features: "Efficiency, Accessibility",
+//         Market_Status: "#1 Free iOS App (US)"
+//       },
+//       description: "DeepSeek's flagship AI model that achieves competitive performance with leading Western AI systems while requiring significantly fewer resources to develop and deploy. The model represents a major advancement in efficient AI development and has been made open source for global research and modification."
+//     }
+//   };
+
+// function NarrativeComponent() {
+//   const [activeTooltip, setActiveTooltip] = useState(null);
+
+//   const renderTooltipCard = (tooltipId) => {
+//     const term = Object.keys(tooltipData).find(key => tooltipData[key].id === tooltipId);
+//     if (!term) return null;
+    
+//     const data = tooltipData[term];
+//     const Icon = data.icon;
+
+//     return (
+//       <div className="bg-white rounded-lg shadow-lg border border-gray-100 w-[600px]">
+//         <div className={`flex items-center gap-3 p-4 ${data.bgColor} rounded-t-lg`}>
+//           <Icon size={24} className={`${data.color}`} />
+//           <div>
+//             <h3 className="text-lg font-medium">{term}</h3>
+//             <p className={`text-sm ${data.color} font-medium`}>{data.type}</p>
+//           </div>
+//         </div>
+
+//         <div className="p-4 text-sm text-gray-600 border-b border-gray-100">
+//           {data.description}
+//         </div>
+
+//         <div className="p-4 grid grid-cols-2 gap-x-8 gap-y-4">
+//           {Object.entries(data.metadata).map(([key, value]) => (
+//             <div key={key} className="flex flex-col">
+//               <span className="text-xs text-gray-500">
+//                 {key.split('_').join(' ')}
+//               </span>
+//               <span className="text-sm font-medium text-gray-900">{value}</span>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     );
+//   };
+
+//   return (
+//     <div className="w-full relative min-h-[500px]">
+//       <div className="bg-white rounded-lg shadow-sm p-6">
+//         <div className="space-y-6 text-gray-700 mb-6">
+//           <p className="leading-relaxed">
+//             In the past week, the{' '}
+//             <span 
+//               className="font-bold relative"
+//               onMouseEnter={() => setActiveTooltip('chinese-ai')}
+//               onMouseLeave={() => setActiveTooltip(null)}
+//             >
+//               Chinese artificial intelligence
+//               <HelpCircle className="inline-block w-4 h-4 absolute -top-2.5 -right-2 text-gray-800" />
+
+//             </span>{' '}
+//             start-up{' '}
+//             <span 
+//               className="font-bold relative"
+//               onMouseEnter={() => setActiveTooltip('deepseek')}
+//               onMouseLeave={() => setActiveTooltip(null)}
+//             >
+//               DeepSeek
+//               <HelpCircle className="inline-block w-4 h-4 absolute -top-2.5 -right-2 text-gray-800" />
+//             </span>{' '}
+//             has made a{' '}
+//             <span 
+//               className="font-bold relative"
+//               onMouseEnter={() => setActiveTooltip('breakthrough')}
+//               onMouseLeave={() => setActiveTooltip(null)}
+//             >
+//               significant breakthrough
+//               <HelpCircle className="inline-block w-4 h-4 absolute -top-2.5 -right-2 text-gray-800" />
+//             </span>{' '}
+//             with the release of its AI model,{' '}
+//             <span 
+//               className="font-bold relative"
+//               onMouseEnter={() => setActiveTooltip('deepseek-r1')}
+//               onMouseLeave={() => setActiveTooltip(null)}
+//             >
+//               DeepSeek-R1
+//               <HelpCircle className="inline-block w-4 h-4 absolute -top-2.5 -right-2 text-gray-800" />
+//             </span>. This model rivals leading Western AI systems, such as OpenAI's ChatGPT, in capabilities but was developed at a fraction of the cost. Notably, DeepSeek-R1 has surpassed ChatGPT as the top free application on Apple's App Store in the United States.
+//           </p>
+
+//           <p className="leading-relaxed">
+//             DeepSeek's approach contrasts with that of many American AI companies by maintaining a relatively open model. The company has made the program's final code and a detailed technical explanation publicly available, allowing researchers and developers worldwide to study and modify the model. This openness has been lauded by many in the tech community.
+//           </p>
+
+//           <p className="leading-relaxed">
+//             The emergence of DeepSeek has had significant impacts on the technology sector. Shares of major tech companies, including Nvidia, Microsoft, and Alphabet, have experienced declines amid concerns over the competitive threat posed by DeepSeek's cost-effective AI model. The development has also intensified discussions about the global AI race and the need for continued innovation and investment in AI technologies.
+//           </p>
+//         </div>
+//       </div>
+
+//       {activeTooltip && (
+//         <div className="absolute top-full left-1/2 mt-10 transform -translate-x-1/2">
+//           {renderTooltipCard(activeTooltip)}
+//         </div>
+//       )}
+//     </div>
+//   );
+// }
+
+// export default NarrativeComponent;
+
+
+
+
+
+
+
+
+
+
+
+
+import React, { useState } from 'react';
+import { Building2, Globe, Cpu, Rocket, HelpCircle } from 'lucide-react';
 
 const tooltipData = {
     "DeepSeek": {
@@ -901,63 +1270,9 @@ const tooltipData = {
       description: "DeepSeek's flagship AI model that achieves competitive performance with leading Western AI systems while requiring significantly fewer resources to develop and deploy. The model represents a major advancement in efficient AI development and has been made open source for global research and modification."
     }
   };
-  
-
-
-
-
-
-
 
 function NarrativeComponent() {
   const [activeTooltip, setActiveTooltip] = useState(null);
-  const [firstOccurrences] = useState(() => {
-    // Initialize with all terms mapped to false (not found yet)
-    return Object.keys(tooltipData).reduce((acc, term) => {
-      acc[term] = false;
-      return acc;
-    }, {});
-  });
-
-  const renderTextWithTooltips = (text, isFirstParagraph) => {
-    let result = text;
-    const terms = Object.keys(tooltipData).sort((a, b) => b.length - a.length);
-    
-    // Only process terms if this is the first paragraph
-    if (isFirstParagraph) {
-      terms.forEach(term => {
-        if (result.includes(term)) {
-          // Find the first occurrence and replace only that one
-          const regex = new RegExp(`(${term})`, '');
-          result = result.replace(regex, (match) => {
-            return `&&&&<span 
-              class="font-bold cursor-help hover:text-blue-600 transition-colors duration-200"
-              data-tooltip="${tooltipData[match].id}"
-            >${match}</span>&&&&`;
-          });
-        }
-      });
-    }
-    
-    return result.split('&&&&').map((part, index) => {
-      if (part.startsWith('<span')) {
-        const tooltipId = part.match(/data-tooltip="([^"]+)"/)[1];
-        const content = part.match(/>(.*?)<\/span>/)[1];
-        
-        return (
-          <span
-            key={index}
-            className="font-bold cursor-help hover:text-blue-600 transition-colors duration-200"
-            onMouseEnter={() => setActiveTooltip(tooltipId)}
-            onMouseLeave={() => setActiveTooltip(null)}
-          >
-            {content}
-          </span>
-        );
-      }
-      return part;
-    });
-  };
 
   const renderTooltipCard = (tooltipId) => {
     const term = Object.keys(tooltipData).find(key => tooltipData[key].id === tooltipId);
@@ -996,31 +1311,59 @@ function NarrativeComponent() {
 
   return (
     <div className="w-full relative min-h-[500px]">
-      <div className="space-y-6 text-gray-700 mb-24">
-        <p className="leading-relaxed">
-          {renderTextWithTooltips(
-            "In the past week, the Chinese artificial intelligence start-up DeepSeek has made a significant breakthrough with the release of its AI model, DeepSeek-R1. This model rivals leading Western AI systems, such as OpenAI's ChatGPT, in capabilities but was developed at a fraction of the cost. Notably, DeepSeek-R1 has surpassed ChatGPT as the top free application on Apple's App Store in the United States.",
-            true
-          )}
-        </p>
+      <div className="bg-white rounded-lg shadow-sm p-6">
+        <div className="space-y-6 text-gray-700 mb-6">
+          <p className="leading-relaxed">
+            In the past week, the{' '}
+            <span 
+              className="font-bold relative"
+              onMouseEnter={() => setActiveTooltip('chinese-ai')}
+              onMouseLeave={() => setActiveTooltip(null)}
+            >
+              Chinese artificial intelligence
+              <HelpCircle className="inline-block w-4 h-4 absolute -top-2.5 -right-2 fill-gray-800 stroke-white" />
+            </span>{' '}
+            start-up{' '}
+            <span 
+              className="font-bold relative"
+              onMouseEnter={() => setActiveTooltip('deepseek')}
+              onMouseLeave={() => setActiveTooltip(null)}
+            >
+              DeepSeek
+              <HelpCircle className="inline-block w-4 h-4 absolute -top-2.5 -right-2 fill-gray-800 stroke-white" />
+            </span>{' '}
+            has made a{' '}
+            <span 
+              className="font-bold relative"
+              onMouseEnter={() => setActiveTooltip('breakthrough')}
+              onMouseLeave={() => setActiveTooltip(null)}
+            >
+              significant breakthrough
+              <HelpCircle className="inline-block w-4 h-4 absolute -top-2.5 -right-2 fill-gray-800 stroke-white" />
+            </span>{' '}
+            with the release of its AI model,{' '}
+            <span 
+              className="font-bold relative"
+              onMouseEnter={() => setActiveTooltip('deepseek-r1')}
+              onMouseLeave={() => setActiveTooltip(null)}
+            >
+              DeepSeek-R1
+              <HelpCircle className="inline-block w-4 h-4 absolute -top-2.5 -right-2 fill-gray-800 stroke-white" />
+            </span>. This model rivals leading Western AI systems, such as OpenAI's ChatGPT, in capabilities but was developed at a fraction of the cost. Notably, DeepSeek-R1 has surpassed ChatGPT as the top free application on Apple's App Store in the United States.
+          </p>
 
-        <p className="leading-relaxed">
-          {renderTextWithTooltips(
-            "DeepSeek's approach contrasts with that of many American AI companies by maintaining a relatively open model. The company has made the program's final code and a detailed technical explanation publicly available, allowing researchers and developers worldwide to study and modify the model. This openness has been lauded by many in the tech community.",
-            false
-          )}
-        </p>
+          <p className="leading-relaxed">
+            DeepSeek's approach contrasts with that of many American AI companies by maintaining a relatively open model. The company has made the program's final code and a detailed technical explanation publicly available, allowing researchers and developers worldwide to study and modify the model. This openness has been lauded by many in the tech community.
+          </p>
 
-        <p className="leading-relaxed">
-          {renderTextWithTooltips(
-            "The emergence of DeepSeek has had significant impacts on the technology sector. Shares of major tech companies, including Nvidia, Microsoft, and Alphabet, have experienced declines amid concerns over the competitive threat posed by DeepSeek's cost-effective AI model. The development has also intensified discussions about the global AI race and the need for continued innovation and investment in AI technologies.",
-            false
-          )}
-        </p>
+          <p className="leading-relaxed">
+            The emergence of DeepSeek has had significant impacts on the technology sector. Shares of major tech companies, including Nvidia, Microsoft, and Alphabet, have experienced declines amid concerns over the competitive threat posed by DeepSeek's cost-effective AI model. The development has also intensified discussions about the global AI race and the need for continued innovation and investment in AI technologies.
+          </p>
+        </div>
       </div>
 
       {activeTooltip && (
-        <div className="absolute top-full left-0 mt-10 ml-[-24px]">
+        <div className="absolute top-full left-1/2 mt-10 transform -translate-x-1/2">
           {renderTooltipCard(activeTooltip)}
         </div>
       )}
@@ -1029,11 +1372,6 @@ function NarrativeComponent() {
 }
 
 export default NarrativeComponent;
-
-
-
-
-
 
 
 
