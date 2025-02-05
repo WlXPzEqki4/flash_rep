@@ -184,7 +184,7 @@ function Layout() {
       element: document.getElementById(section.id)
     }));
 
-    const mostVisible = sectionElements.reduce((acc, section) => {
+    const mostVisible = sectionElements.reduce((acc, section) => {pwd
       const rect = section.element?.getBoundingClientRect();
       if (!rect) return acc;
       const visibleHeight =
